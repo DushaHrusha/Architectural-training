@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Architectural-training.sln"
+    "dotnet.defaultSolution": "Architectural-training.sln",
+    "FSharp.suggestGitignore": false
 }
