@@ -1,3 +1,4 @@
+using Architectural_training.Assets.CodeBase.Infrastructure.Services;
 using CodeBase.Logic;
 using CodeBase.Services.Input;
 
@@ -10,7 +11,7 @@ namespace CodeBase.Infrastructure
 
     public Game(ICoroutineRunner coroutineRunner, LoadingCurtain curtain)
     {
-      StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), curtain);
+      StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), curtain, AllSerices.Container);
     }
   }
 }

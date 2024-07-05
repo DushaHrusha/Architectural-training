@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace CodeBase.Infrastructure
 {
-    public class AssetProvder : IAssetProvder
+    public class AssetProvider : IAssets
     {
         public GameObject Instantiate(string path)
         {

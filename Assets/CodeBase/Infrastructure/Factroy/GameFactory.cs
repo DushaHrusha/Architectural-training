@@ -6,19 +6,19 @@ namespace CodeBase.Infrastructure
     public class GameFactory:IGameFactory
     {
         
-        private readonly IAssetProvder _assets;
-        public GameFactory(IAssetProvder assets)
+        private readonly IAssets _assetses;
+        public GameFactory(IAssets assetses)
         {
-            _assets = assets;
+            _assetses = assetses;
         }
 
         public GameObject CreateHero(GameObject at)
         {
-            return _assets.Instantiate(AssetPath.HeroPath, at.transform.position);
+            return _assetses.Instantiate(AssetPath.HeroPath, at.transform.position);
         }
         public void CreateHud()
         {
-            _assets.Instantiate(AssetPath.HudPath);
+            _assetses.Instantiate(AssetPath.HudPath);
         }
     }
 }
