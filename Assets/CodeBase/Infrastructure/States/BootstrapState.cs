@@ -1,5 +1,6 @@
 ﻿using Architectural_training.Assets.CodeBase.Infrastructure.AssetManagment;
 using Architectural_training.Assets.CodeBase.Infrastructure.Services;
+using Architectural_training.Assets.CodeBase.Infrastructure.Services.PersistentProgress;
 using CodeBase.Services.Input;
 using UnityEngine;
 
@@ -35,6 +36,7 @@ namespace CodeBase.Infrastructure
     private void RegisterServices()
     {
       _serices.RegisterSingle<IInputService>(InputService());
+      _serices.RegisterSingle<IPersistenProgressServies>(new PersistenProgressServies());
       _serices.RegisterSingle<IAssets>(new AssetProvider());
       _serices.RegisterSingle<IGameFactory>(new GameFactory(_serices.Single<IAssets>()));
     }
