@@ -1,4 +1,4 @@
-﻿using CodeBase.CameraLogic;
+﻿using Architectural_training.Assets.CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure;
 using CodeBase.Services.Input;
 using UnityEngine;
@@ -15,15 +15,11 @@ namespace CodeBase.Hero
 
     private void Awake()
     {
-      _inputService = Game.InputService;
+      _inputService = AllSerices.Container.Single<IInputService>();
     }
 
-    private void Start()
-    {
+    private void Start() => 
       _camera = Camera.main;
-
-      CameraFollow();
-    }
 
     private void Update()
     {
@@ -41,11 +37,6 @@ namespace CodeBase.Hero
       movementVector += Physics.gravity;
 
       _characterController.Move(_movementSpeed * movementVector * Time.deltaTime);
-    }
-
-    private void CameraFollow()
-    {
-      _camera.GetComponent<CameraFollow>().Follow(gameObject);
     }
   }
 }
