@@ -1,4 +1,4 @@
-using Architectural_training.Assets.CodeBase.Infrastructure.Services;
+using CodeBase.Infrastructure.Services;
 using UnityEngine;
 
 namespace CodeBase.Services.Input

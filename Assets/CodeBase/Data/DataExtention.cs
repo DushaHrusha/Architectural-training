@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Architectural_training.Assets.CodeBase.Data
+namespace CodeBase.Data
 {
     public static class DataExtention
     {
@@ -11,6 +11,14 @@ namespace Architectural_training.Assets.CodeBase.Data
         public static Vector3 AsUnityVector(this Vector3Data vector )
         {
             return new Vector3(vector.X,vector.Y,vector.Z);
+        }
+
+        public static T ToDeserealized<T>(this string json) => 
+            JsonUtility.FromJson<T>(json);
+        
+        public static string ToJson(this object obj)
+        {
+            return JsonUtility.ToJson(obj);
         }
     }
 }

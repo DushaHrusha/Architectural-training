@@ -1,7 +1,7 @@
-using Architectural_training.Assets.CodeBase.Infrastructure.Services;
+using CodeBase.Infrastructure.Services;
 using UnityEngine;
 
-namespace Architectural_training.Assets.CodeBase.Infrastructure.AssetManagment
+namespace CodeBase.Infrastructure.AssetManagment
 {
     public interface IAssets : ISercies
     {

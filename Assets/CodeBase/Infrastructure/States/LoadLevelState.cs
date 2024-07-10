@@ -23,6 +23,7 @@ namespace CodeBase.Infrastructure
     public void Enter(string sceneName)
     {
       _loadingCurtain.Show();
+      _gameFactroy.CleanUp();
       _sceneLoader.Load(sceneName, onLoaded);
     }
 

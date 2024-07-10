@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Architectural_training.Assets.CodeBase.Data
+namespace CodeBase.Data
 {
     [Serializable]
     public class Vector3Data

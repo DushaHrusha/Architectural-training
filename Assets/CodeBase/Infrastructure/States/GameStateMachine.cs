@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using Architectural_training.Assets.CodeBase.Infrastructure.Services;
+using CodeBase.Infrastructure.Services;
+using CodeBase.Infrastructure.Services.PersistentProgress;
 using CodeBase.Logic;
 
 namespace CodeBase.Infrastructure
 {
-  public class GameStateMachine
+    public class GameStateMachine
   {
     private Dictionary<Type, IExitableState> _states;
     private IExitableState _activeState;
@@ -16,6 +17,7 @@ namespace CodeBase.Infrastructure
       {
         [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, serices),
         [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, loadingCurtain, serices.Single<IGameFactory>()),
+        [typeof(LoadProgressState)] = new LoadProgressState(this, serices.Single<IPersistenProgressServies>(),serices.Single<ISaveLoadServies>()),
         [typeof(GameLoopState)] = new GameLoopState(this),
       };
     }

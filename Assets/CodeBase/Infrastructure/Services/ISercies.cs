@@ -1,4 +1,4 @@
-namespace Architectural_training.Assets.CodeBase.Infrastructure.Services
+namespace CodeBase.Infrastructure.Services
 {
     public interface ISercies
     {

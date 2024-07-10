@@ -1,7 +1,7 @@
 ﻿using System;
-using Architectural_training.Assets.CodeBase.Data;
-using Architectural_training.Assets.CodeBase.Infrastructure.Services;
-using Architectural_training.Assets.CodeBase.Infrastructure.Services.PersistentProgress;
+using CodeBase.Data;
+using CodeBase.Infrastructure.Services;
+using CodeBase.Infrastructure.Services.PersistentProgress;
 using CodeBase.Infrastructure;
 using CodeBase.Services.Input;
 using UnityEngine;
@@ -36,7 +36,7 @@ namespace CodeBase.Hero
 		_characterController.enabled = true;
 	}
 
-        public void UpdateProgress(PlayerProgress progress)
+    public void UpdateProgress(PlayerProgress progress)
     {
         progress.WorldData.PossitionOnLevel = new PossitionOnLevel(CurentLevel(), transform.position.AsVectorData());
     }

@@ -1,6 +1,6 @@
-﻿using Architectural_training.Assets.CodeBase.Infrastructure.AssetManagment;
-using Architectural_training.Assets.CodeBase.Infrastructure.Services;
-using Architectural_training.Assets.CodeBase.Infrastructure.Services.PersistentProgress;
+﻿using CodeBase.Infrastructure.AssetManagment;
+using CodeBase.Infrastructure.Services;
+using CodeBase.Infrastructure.Services.PersistentProgress;
 using CodeBase.Services.Input;
 using UnityEngine;
 
@@ -31,12 +31,13 @@ namespace CodeBase.Infrastructure
     }
 
     private void EnterLoadLevel() => 
-      _stateMachine.Enter<LoadLevelState, string>("Main");
+      _stateMachine.Enter<LoadProgressState>();
 
     private void RegisterServices()
     {
       _serices.RegisterSingle<IInputService>(InputService());
       _serices.RegisterSingle<IPersistenProgressServies>(new PersistenProgressServies());
+      _serices.RegisterSingle<ISaveLoadServies>(new SaveLoadServies(_serices.Single<IPersistenProgressServies>(),_serices.Single<IGameFactory>()));
       _serices.RegisterSingle<IAssets>(new AssetProvider());
       _serices.RegisterSingle<IGameFactory>(new GameFactory(_serices.Single<IAssets>()));
     }

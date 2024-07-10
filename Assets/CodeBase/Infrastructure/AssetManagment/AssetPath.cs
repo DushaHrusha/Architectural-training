@@ -1,4 +1,4 @@
-namespace Architectural_training.Assets.CodeBase.Infrastructure.AssetManagment
+namespace CodeBase.Infrastructure.AssetManagment
 {
     public static class AssetPath
     {

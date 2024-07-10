@@ -1,10 +1,14 @@
 using System;
 
-namespace Architectural_training.Assets.CodeBase.Data
+namespace CodeBase.Data
 {
     [Serializable]
     public class WorldData
     {
         public PossitionOnLevel PossitionOnLevel;
+        public WorldData(string initialLevel)
+        {
+            PossitionOnLevel PossitionOnLevel = new PossitionOnLevel(initialLevel);
+        }
     }
 }

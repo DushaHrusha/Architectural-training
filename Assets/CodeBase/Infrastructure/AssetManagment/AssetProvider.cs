@@ -1,4 +1,4 @@
-using Architectural_training.Assets.CodeBase.Infrastructure.AssetManagment;
+using CodeBase.Infrastructure.AssetManagment;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure

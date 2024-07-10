@@ -2,7 +2,7 @@ using System.ComponentModel;
 using CodeBase.Infrastructure;
 using UnityEditor.IMGUI.Controls;
 
-namespace Architectural_training.Assets.CodeBase.Infrastructure.Services
+namespace CodeBase.Infrastructure.Services
 {
     public class AllSerices
     {

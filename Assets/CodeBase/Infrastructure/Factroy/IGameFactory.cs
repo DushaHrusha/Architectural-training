@@ -1,4 +1,6 @@
-using Architectural_training.Assets.CodeBase.Infrastructure.Services;
+using System.Collections.Generic;
+using CodeBase.Infrastructure.Services;
+using CodeBase.Infrastructure.Services.PersistentProgress;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure
@@ -7,5 +9,8 @@ namespace CodeBase.Infrastructure
     {
         void CreateHud();
         GameObject CreateHero(GameObject at);
+        List<ISavedProgressReader> progressReaders {get;}
+        List<ISaveProgress> progressWriters {get;}
+        void CleanUp();
     }
 }
