@@ -13,8 +13,8 @@ namespace CodeBase.Infrastructure
 
         public LoadProgressState(GameStateMachine gameStateMachine, IPersistenProgressServies progressServies, ISaveLoadServies saveLoadServies)
         {
-            this._gameStateMachine = gameStateMachine;
-            this._progressServies = progressServies;
+            _gameStateMachine = gameStateMachine;
+            _progressServies = progressServies;
             _saveLoadServies = saveLoadServies;
         }
         public void Enter()

@@ -37,9 +37,9 @@ namespace CodeBase.Infrastructure
     {
       _serices.RegisterSingle<IInputService>(InputService());
       _serices.RegisterSingle<IPersistenProgressServies>(new PersistenProgressServies());
-      _serices.RegisterSingle<ISaveLoadServies>(new SaveLoadServies(_serices.Single<IPersistenProgressServies>(),_serices.Single<IGameFactory>()));
       _serices.RegisterSingle<IAssets>(new AssetProvider());
       _serices.RegisterSingle<IGameFactory>(new GameFactory(_serices.Single<IAssets>()));
+      _serices.RegisterSingle<ISaveLoadServies>(new SaveLoadServies(_serices.Single<IPersistenProgressServies>(),_serices.Single<IGameFactory>()));
     }
 
     private static IInputService InputService()

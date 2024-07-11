@@ -8,7 +8,7 @@ namespace CodeBase.Data
         public PossitionOnLevel PossitionOnLevel;
         public WorldData(string initialLevel)
         {
-            PossitionOnLevel PossitionOnLevel = new PossitionOnLevel(initialLevel);
+            PossitionOnLevel = new PossitionOnLevel(initialLevel);
         }
     }
 }

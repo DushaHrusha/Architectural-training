@@ -21,9 +21,9 @@ namespace CodeBase.Infrastructure
 
         public void SaveProgress() 
         {
-            foreach (var progressWriter in _gameFactory.ProgressWriters)
+            foreach (var progressWriter in _gameFactory.progressWriters)
             {
-                progressWriter.UpdateProgress(progressServies);
+                progressWriter.UpdateProgress(progressServies.Progress);
             }
 
             PlayerPrefs.SetString(ProgressKey, progressServies.Progress.ToJson());

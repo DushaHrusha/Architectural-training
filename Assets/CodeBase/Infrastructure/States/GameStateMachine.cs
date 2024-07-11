@@ -16,7 +16,7 @@ namespace CodeBase.Infrastructure
       _states = new Dictionary<Type, IExitableState>
       {
         [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, serices),
-        [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, loadingCurtain, serices.Single<IGameFactory>()),
+        [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, loadingCurtain, serices.Single<IGameFactory>(), serices.Single<IPersistenProgressServies>()),
         [typeof(LoadProgressState)] = new LoadProgressState(this, serices.Single<IPersistenProgressServies>(),serices.Single<ISaveLoadServies>()),
         [typeof(GameLoopState)] = new GameLoopState(this),
       };
