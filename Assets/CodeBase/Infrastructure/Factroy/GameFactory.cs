@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using CodeBase.Infrastructure.AssetManagment;
 using CodeBase.Infrastructure.Services.PersistentProgress;                                                                          
 using UnityEngine;
@@ -12,16 +13,24 @@ namespace CodeBase.Infrastructure
         public List<ISavedProgressReader> progressReaders {get;} = new List<ISavedProgressReader>();
         public List<ISaveProgress> progressWriters {get;} = new List<ISaveProgress>();
 
-        public GameFactory(IAssets assetses)
-        {
-            _assetses = assetses;
-        }
+        GameObject IGameFactory.HeroGameObject => throw new NotImplementedException();
 
+        public GameObject HeroGameObject { get; set; }
+
+        public event Action HeroCreated;
+
+        public GameFactory(IAssets assetses) =>
+            _assetses = assetses;
+        
         public void CreateHud() =>
             InstantiateRegistered(AssetPath.HudPath);
 
-        public GameObject CreateHero(GameObject at) =>
-            InstantiateRegistered(AssetPath.HeroPath, at.transform.position);
+        public GameObject CreateHero(GameObject at)
+        {
+            HeroGameObject = InstantiateRegistered(AssetPath.HeroPath, at.transform.position);
+            HeroCreated?.Invoke();
+            return HeroGameObject;
+        }
 
         private GameObject InstantiateRegistered(string prefabPath, Vector3 at)
         {
