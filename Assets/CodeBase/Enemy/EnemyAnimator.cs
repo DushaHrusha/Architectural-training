@@ -32,7 +32,7 @@ namespace Architectural_training.Assets.CodeBase.Enemy
             _animator.SetBool(IsMoving, true);
             _animator.SetFloat(Speed,speed);
         }
-        public void StopMoving(float speed) => _animator.SetBool(IsMoving, false);
+        public void StopMoving() => _animator.SetBool(IsMoving, false);
 
         public void PlayAttack() => _animator.SetTrigger(Attack);
 

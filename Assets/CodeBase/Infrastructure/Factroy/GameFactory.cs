@@ -13,8 +13,6 @@ namespace CodeBase.Infrastructure
         public List<ISavedProgressReader> progressReaders {get;} = new List<ISavedProgressReader>();
         public List<ISaveProgress> progressWriters {get;} = new List<ISaveProgress>();
 
-        GameObject IGameFactory.HeroGameObject => throw new NotImplementedException();
-
         public GameObject HeroGameObject { get; set; }
 
         public event Action HeroCreated;
