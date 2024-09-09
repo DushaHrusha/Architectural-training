@@ -3,10 +3,11 @@ using UnityEngine;
 
 namespace CodeBase.Services.Input
 {
-  public interface IInputService : ISercies
-  {
-    Vector2 Axis { get; }
+    public interface IInputService : ISercies
+    {
+        Vector2 Axis { get; }
 
-    bool IsAttackButtonUp();
-  }
+        bool IsAttackButtonUp();
+
+    }
 }

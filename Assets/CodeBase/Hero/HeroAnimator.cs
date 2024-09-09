@@ -13,7 +13,7 @@ namespace CodeBase.Hero
     private static readonly int AttackHash = Animator.StringToHash("AttackNormal");
     private static readonly int HitHash = Animator.StringToHash("Hit");
     private static readonly int DieHash = Animator.StringToHash("Die");
-
+	
     private readonly int _idleStateHash = Animator.StringToHash("Idle");
     private readonly int _idleStateFullHash = Animator.StringToHash("Base Layer.Idle");
     private readonly int _attackStateHash = Animator.StringToHash("Attack Normal");
